@@ -8,6 +8,8 @@ import FilterLogKeys from "../components/filterLogKeys";
 import Pagination from "../components/pagination";
 import SearchBox from "../components/searchBox";
 
+const api = process.env.REACT_APP_URL_API_LOGGER;
+
 function ActivityMonitor() {
   const isMobile = useIsMobile();
 
@@ -58,7 +60,7 @@ function ActivityMonitor() {
 
   async function initData() {
     await reqLogKeys();
-    await reqLogData(`http://localhost:3420/logger/logs?limit=${limitPage}&page=${activePage}`);
+    await reqLogData(`${api}logs?limit=${limitPage}&page=${activePage}`);
   }
   async function reqLogData(url) {
     const { data } = await axios.get(url);
@@ -71,7 +73,7 @@ function ActivityMonitor() {
     }
   }
   async function reqLogKeys() {
-    const { data } = await axios.get('http://localhost:3420/logger/log_keys/sum');
+    const { data } = await axios.get(`${api}/log_keys/sum`);
     if (data) {
       setLogKeys(data.data);
     }
@@ -79,21 +81,21 @@ function ActivityMonitor() {
   useEffect(() => initData, []);
 
   function implementFilterLogKeys(keys = []) {
-    let url = `http://localhost:3420/logger/logs?limit=${limitPage}&page=${activePage}&q=${encodeURIComponent(activeSearch)}`;
+    let url = `${api}logs?limit=${limitPage}&page=${activePage}&q=${encodeURIComponent(activeSearch)}`;
     for (const key of keys) {
       url += '&keys[]='+key;
     }
     reqLogData(url);
   }
   function implementFilterPage(page) {
-    let url = `http://localhost:3420/logger/logs?limit=${limitPage}&page=${page}&q=${encodeURIComponent(activeSearch)}`;
+    let url = `${api}logs?limit=${limitPage}&page=${page}&q=${encodeURIComponent(activeSearch)}`;
     for (const key of activeFilterKeys) {
       url += '&keys[]='+key;
     }
     reqLogData(url);
   }
   function implementSearch(q) {
-    let url = `http://localhost:3420/logger/logs?limit=${limitPage}&page=${activePage}&q=${encodeURIComponent(q)}`;
+    let url = `${api}logs?limit=${limitPage}&page=${activePage}&q=${encodeURIComponent(q)}`;
     for (const key of activeFilterKeys) {
       url += '&keys[]='+key;
     }
