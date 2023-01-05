@@ -78,7 +78,7 @@ function ActivityMonitor() {
       setLogKeys(data.data);
     }
   }
-  useEffect(() => initData, []);
+  useEffect(() => {initData()}, []);
 
   function implementFilterLogKeys(keys = []) {
     let url = `${api}logs?limit=${limitPage}&page=${activePage}&q=${encodeURIComponent(activeSearch)}`;
