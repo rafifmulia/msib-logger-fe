@@ -1,0 +1,22 @@
+.tabnavs span {
+  padding: 0 0.5rem;
+  font-size: 14px;
+  /* border-right: 1px solid rgba(0, 0, 0, 0.3); */
+  cursor: pointer;
+}
+.tabnavs span:nth-last-child(1) {
+  border-right: none;
+}
+.tabnavs span:hover:not(.tabnavs__active) {
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: rgba(25, 40, 65, 0.5);
+}
+
+.tabnavs__active {
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: rgba(25, 40, 65, 1);
+}

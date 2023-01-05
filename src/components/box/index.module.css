@@ -1,0 +1,14 @@
+.box {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.box__inner {
+  padding: 0.75rem;
+}
+
+.box__auto {
+  width: auto;
+  height: auto;
+}

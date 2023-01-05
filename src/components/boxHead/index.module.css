@@ -1,0 +1,14 @@
+.box__head {
+  display: flex;
+}
+
+.box__head__row {
+  flex-direction: row;
+}
+.box__head__column {
+  flex-direction: column;
+}
+
+.box__head__border__bot {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

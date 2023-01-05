@@ -1,0 +1,19 @@
+.container {
+  padding: 1.25rem;
+  background-color: #f5f8fa;
+  min-height: 91vh;
+  width: auto;
+  overflow-y: visible;
+}
+
+@media (min-width: 769px) {
+  .container {
+    margin-left: 27.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-left: 18%;
+  }
+}

@@ -1,0 +1,10 @@
+.box__body {
+  display: flex;
+}
+
+.box__body__row {
+  flex-direction: row;
+}
+.box__body__column {
+  flex-direction: column;
+}
