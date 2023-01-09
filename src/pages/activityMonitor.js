@@ -73,7 +73,7 @@ function ActivityMonitor() {
     }
   }
   async function reqLogKeys() {
-    const { data } = await axios.get(`${api}/log_keys/sum`);
+    const { data } = await axios.get(`${api}log_keys/sum`);
     if (data) {
       setLogKeys(data.data);
     }
